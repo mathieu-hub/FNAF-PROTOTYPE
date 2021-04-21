@@ -1,12 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamManager : MonoBehaviour
+[Serializable]
+public class CamManager 
 {
+    public static CamManager instance;
+
     public ArrayList[] normalCam;
     public ArrayList[] activateCam;
     public ArrayList[] actualStateCam;
+
+    public List<GameObject> listDeCam;
 
     void Start()
     {
