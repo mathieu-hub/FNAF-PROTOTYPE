@@ -10,7 +10,7 @@ public class CamManager : MonoBehaviour
 
     public List<GameObject> normalCam = new List<GameObject>();
 
-    //public List<Material> camMaterials;
+    public List<Material> camMaterials = new List<Material>();
 
     private void Awake()
     {

@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class CamSwitch : MonoBehaviour
 {
+    [Header ("UI CAMERA")]
+    [SerializeField]
+    private GameObject selectNormalCam;
+
     [SerializeField]
     private List<GameObject> uiNormalCam = new List<GameObject>(); 
 
+    [Header("MATERIAL CAMERA VISUALIZER")]
     [SerializeField]
-    private GameObject selectNormalCam;    
+    private Material actualMaterialCam;
+
+    [SerializeField]
+    private List<Material> materialCam = new List<Material>();
+
 
     public void Start()
     {
         uiNormalCam = CamManager.Instance.normalCam;
         selectNormalCam = uiNormalCam[0];
+
+        materialCam = CamManager.Instance.camMaterials;
+        actualMaterialCam = materialCam[0];
     }
 
-    public void ActiveCam(GameObject currentCam)
+    public void UiActiveCam(GameObject currentCam)
     {
         if (selectNormalCam != null)
         {
@@ -27,10 +39,10 @@ public class CamSwitch : MonoBehaviour
         {
             Debug.Log("SelectNormalCam est null");
         }
-
+        
         selectNormalCam = currentCam;
         CamManager.Instance.normalCam.Remove(currentCam);
-        Debug.Log("Click 1A");
+        Debug.Log("Click Button Cam");
         StartCoroutine(DisplayUiCam()); 
     }
 
@@ -38,7 +50,12 @@ public class CamSwitch : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         selectNormalCam.SetActive(false);
-        Debug.Log("Active 1A");
+        Debug.Log("Active button Cam");
+    }
+
+    public void MaterialActiveCam(Material currentMaterial)
+    {
+        actualMaterialCam = currentMaterial;
     }
     
 }
