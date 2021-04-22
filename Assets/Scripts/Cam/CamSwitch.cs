@@ -5,22 +5,18 @@ using UnityEngine;
 public class CamSwitch : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> uiNormalCam; 
+    private List<GameObject> uiNormalCam = new List<GameObject>(); 
 
     [SerializeField]
-    private GameObject selectNormalCam;
-
-    public void Awake()
-    {
-        uiNormalCam = CamManager.Instance.normalCam;
-    }
+    private GameObject selectNormalCam;    
 
     public void Start()
     {
+        uiNormalCam = CamManager.Instance.normalCam;
         selectNormalCam = uiNormalCam[0];
     }
 
-    public void Active1A()
+    public void ActiveCam(GameObject currentCam)
     {
         if (selectNormalCam != null)
         {
@@ -44,9 +40,5 @@ public class CamSwitch : MonoBehaviour
         selectNormalCam.SetActive(false);
         Debug.Log("Active 1A");
     }
-
-    public void Active1B()
-    {
-        Debug.Log("Click 1B");
-    }
+    
 }

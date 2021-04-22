@@ -3,25 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class CamManager 
+
+public class CamManager : MonoBehaviour
 {
     public static CamManager Instance;
 
-    [Header("Normal Camera")]
-    public GameObject cam1A;
-    public GameObject cam1B;
-    public GameObject cam1C;
-    public GameObject cam2A;
-    public GameObject cam2B;
-    public GameObject cam3;
-    public GameObject cam4A;
-    public GameObject cam4B;
-    public GameObject cam5;
-    public GameObject cam6;
-    public GameObject cam7;
+    public List<GameObject> normalCam = new List<GameObject>();
 
-    [Header("Material Cam Visualizer")]
-    public Material mCam1A;
+    public List<Material> camMaterials;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 }
 

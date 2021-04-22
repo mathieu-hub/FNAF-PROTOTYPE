@@ -1183,6 +1183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3e288c5ba9ccf4ea1f9fe3fb0ae06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiNormalCam: []
   selectNormalCam: {fileID: 0}
 --- !u!1 &255818641
 GameObject:
@@ -3725,11 +3726,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 235530456}
-        m_MethodName: Active1A
-        m_Mode: 1
+        m_MethodName: ActiveCam
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9910,6 +9911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1969730697}
   - component: {fileID: 1969730696}
+  - component: {fileID: 1969730698}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9929,32 +9931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14101bd502ebcc849b844da202cc448d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraManager:
-    selectNormalCamera: {fileID: 0}
-    uiNormalCam:
-    - {fileID: 420582201}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    camMaterials:
-    - {fileID: 2100000, guid: 7000283b720d62649bd967adba4fbf41, type: 2}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+  CameraManager: {fileID: 1969730698}
 --- !u!4 &1969730697
 Transform:
   m_ObjectHideFlags: 0
@@ -9969,6 +9946,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1969730698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969730695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034404638f0d5484b89fab316015d4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalCam: []
+  camMaterials: []
 --- !u!1 &2017361325
 GameObject:
   m_ObjectHideFlags: 0
