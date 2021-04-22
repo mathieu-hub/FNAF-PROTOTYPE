@@ -12,6 +12,8 @@ public class CamManager : MonoBehaviour
 
     public List<Material> camMaterials = new List<Material>();
 
+    public Material camVisualizer;
+
     private void Awake()
     {
         Instance = this;

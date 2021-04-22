@@ -13,9 +13,6 @@ public class CamSwitch : MonoBehaviour
 
     [Header("MATERIAL CAMERA VISUALIZER")]
     [SerializeField]
-    private Material actualMaterialCam;
-
-    [SerializeField]
     private List<Material> materialCam = new List<Material>();
 
 
@@ -25,7 +22,8 @@ public class CamSwitch : MonoBehaviour
         selectNormalCam = uiNormalCam[0];
 
         materialCam = CamManager.Instance.camMaterials;
-        actualMaterialCam = materialCam[0];
+        
+        CamManager.Instance.camVisualizer = materialCam[0];
     }
 
     public void UiActiveCam(GameObject currentCam)
@@ -55,7 +53,7 @@ public class CamSwitch : MonoBehaviour
 
     public void MaterialActiveCam(Material currentMaterial)
     {
-        actualMaterialCam = currentMaterial;
+        CamManager.Instance.camVisualizer = currentMaterial;
     }
     
 }

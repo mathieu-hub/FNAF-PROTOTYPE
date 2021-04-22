@@ -1446,6 +1446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 273759251}
   mapDisplay: {fileID: 235530452}
+  camDisplay: {fileID: 0}
   openTablette: 0
 --- !u!1 &273759249
 GameObject:
@@ -5599,7 +5600,7 @@ RectTransform:
   m_Children:
   - {fileID: 1302522399}
   m_Father: {fileID: 1854492831}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5650,11 +5651,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 235530456}
-        m_MethodName: ActiveCam
+        m_MethodName: UiActiveCam
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 420582201}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 235530456}
+        m_MethodName: MaterialActiveCam
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 7000283b720d62649bd967adba4fbf41,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6205,7 +6218,7 @@ RectTransform:
   m_Children:
   - {fileID: 73937269}
   m_Father: {fileID: 1854492831}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6256,11 +6269,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 235530456}
-        m_MethodName: ActiveCam
+        m_MethodName: UiActiveCam
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 805665884}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 235530456}
+        m_MethodName: MaterialActiveCam
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 72d773c0cacfcd241bcdfd6c6510ce97,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9473,8 +9498,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1164312668}
   - {fileID: 1076151528}
+  - {fileID: 1164312668}
   - {fileID: 1480802944}
   - {fileID: 235530453}
   m_Father: {fileID: 0}
@@ -10161,7 +10186,10 @@ MonoBehaviour:
   - {fileID: 818085718}
   - {fileID: 379667510}
   - {fileID: 841903864}
-  camMaterials: []
+  camMaterials:
+  - {fileID: 2100000, guid: 7000283b720d62649bd967adba4fbf41, type: 2}
+  - {fileID: 2100000, guid: 72d773c0cacfcd241bcdfd6c6510ce97, type: 2}
+  - {fileID: 2100000, guid: 68af11c2582a4ae40839b18d8ac1233a, type: 2}
 --- !u!1 &2017361325
 GameObject:
   m_ObjectHideFlags: 0

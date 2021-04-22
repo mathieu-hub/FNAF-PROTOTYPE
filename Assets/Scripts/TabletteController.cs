@@ -6,14 +6,24 @@ public class TabletteController : MonoBehaviour
 {
     public Animator anim;
     public GameObject mapDisplay;
+    
+    public Material camDisplay;
+    Renderer rend;
 
     [SerializeField]
     private bool openTablette;
 
+    private void Start()
+    {
+        rend = GetComponent<Renderer>();
+        rend.enabled = true; 
+    }
 
     private void Update()
     {
         openTablette = anim.GetBool("OpenTablette");
+        camDisplay = CamManager.Instance.camVisualizer;
+        rend.sharedMaterial = camDisplay;
     }
 
     public void OpenCloseTablette()
