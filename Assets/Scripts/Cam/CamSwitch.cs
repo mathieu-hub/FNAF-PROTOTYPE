@@ -28,8 +28,8 @@ public class CamSwitch : MonoBehaviour
             Debug.Log("SelectNormalCam est null");
         }
 
-        selectNormalCam = CamManager.Instance.normalCam[0];
-        CamManager.Instance.normalCam.Remove(CamManager.Instance.normalCam[0]);
+        selectNormalCam = currentCam;
+        CamManager.Instance.normalCam.Remove(currentCam);
         Debug.Log("Click 1A");
         StartCoroutine(DisplayUiCam()); 
     }
