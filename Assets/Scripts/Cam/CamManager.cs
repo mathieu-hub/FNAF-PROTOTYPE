@@ -6,18 +6,22 @@ using UnityEngine;
 [Serializable]
 public class CamManager 
 {
-    public static CamManager instance;
+    public static CamManager Instance;
 
-    public ArrayList[] normalCam;
-    public ArrayList[] activateCam;
-    public ArrayList[] actualStateCam;
+    [Header("Normal Camera")]
+    public GameObject cam1A;
+    public GameObject cam1B;
+    public GameObject cam1C;
+    public GameObject cam2A;
+    public GameObject cam2B;
+    public GameObject cam3;
+    public GameObject cam4A;
+    public GameObject cam4B;
+    public GameObject cam5;
+    public GameObject cam6;
+    public GameObject cam7;
 
-    public List<GameObject> listDeCam;
-
-    void Start()
-    {
-        normalCam = new ArrayList[11];
-        activateCam = new ArrayList[11];
-        actualStateCam = new ArrayList[11];
-    }
+    [Header("Material Cam Visualizer")]
+    public Material mCam1A;
 }
+

@@ -4,27 +4,49 @@ using UnityEngine;
 
 public class CamSwitch : MonoBehaviour
 {
-    public GameObject normalCam;
-    public GameObject activateCam;
+    [SerializeField]
+    private List<GameObject> uiNormalCam; 
 
-    private GameObject thisCam;
-    
-    public int camIndex;
+    [SerializeField]
+    private GameObject selectNormalCam;
 
-    void Awake()
+    public void Awake()
     {
-        thisCam = this.gameObject;
-        //thisCam = CamManager.instance.listDeCam[camIndex]; c'est ça qu'il faut faire.
+        uiNormalCam = CamManager.Instance.normalCam;
     }
 
-    void Start()
+    public void Start()
     {
-        normalCam.SetActive(true);
-        activateCam.SetActive(false);
+        selectNormalCam = uiNormalCam[0];
     }
 
-    void ActivateThisCam()
+    public void Active1A()
     {
+        if (selectNormalCam != null)
+        {
+            selectNormalCam.SetActive(true);
+            CamManager.Instance.normalCam.Add(selectNormalCam);
+        }
+        else
+        {
+            Debug.Log("SelectNormalCam est null");
+        }
 
+        selectNormalCam = CamManager.Instance.normalCam[0];
+        CamManager.Instance.normalCam.Remove(CamManager.Instance.normalCam[0]);
+        Debug.Log("Click 1A");
+        StartCoroutine(DisplayUiCam()); 
+    }
+
+    IEnumerator DisplayUiCam()
+    {
+        yield return new WaitForSeconds(0.3f);
+        selectNormalCam.SetActive(false);
+        Debug.Log("Active 1A");
+    }
+
+    public void Active1B()
+    {
+        Debug.Log("Click 1B");
     }
 }

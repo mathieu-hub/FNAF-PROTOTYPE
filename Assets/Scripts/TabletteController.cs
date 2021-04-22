@@ -5,7 +5,7 @@ using UnityEngine;
 public class TabletteController : MonoBehaviour
 {
     public Animator anim;
-    public GameObject mapDisplay; 
+    public GameObject mapDisplay;
 
     [SerializeField]
     private bool openTablette;

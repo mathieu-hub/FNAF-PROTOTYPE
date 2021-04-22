@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
+    [Header("CAMERA MANAGER")]
+    public CamManager CameraManager;
 
 
     void Start()
