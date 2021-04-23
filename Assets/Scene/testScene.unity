@@ -10230,7 +10230,7 @@ MonoBehaviour:
   CameraManager: {fileID: 1969730698}
   timeStart: 0
   timer: 0
-  uiTimer: 0
+  uiTimer: 12
   textBox: {fileID: 517380445}
   night: 1
 --- !u!4 &1969730697

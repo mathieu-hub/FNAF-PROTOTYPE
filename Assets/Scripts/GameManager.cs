@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
         textBox.text = uiTimer.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime; //Clock System
@@ -42,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     void TimePassing()
     {
-        if(timer == 90)
+        if(timer >= 90)
         {
             timer = timeStart;
             if (uiTimer == 12)
