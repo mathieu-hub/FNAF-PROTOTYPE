@@ -17,10 +17,16 @@ public class GameManager : MonoBehaviour
     public Text timeText;
     [SerializeField]
     private bool midnightIsPassed = false;
+    [SerializeField]
+    private bool timeActive = true;
 
     [Header("NIGHT")]
     public int night;
     public Text nightText;
+
+    [Header("TRANSITION")]
+    public Animator animator;
+    public bool canFade = false;
 
 
     private void Awake()
@@ -34,14 +40,18 @@ public class GameManager : MonoBehaviour
         uiTimer = 12;
         timeText.text = uiTimer.ToString();
         night = 1;
-        nightText.text = night.ToString();
+        nightText.text = night.ToString();        
     }
 
     void Update()
     {
-        timer += Time.deltaTime; //Clock System
+        if (timeActive)
+        {
+            timer += Time.deltaTime; //Clock System
+        }
+
         timeText.text = uiTimer.ToString() + "AM"; //Affichage textuel de la valeur uiTimer dans la textBox
-        nightText.text = "Night " + night.ToString();
+        nightText.text = "Night " + night.ToString(); //Affichage textuel de la valeur night dans la textBox
         TimePassing();
         EndNight();
     }
@@ -71,8 +81,26 @@ public class GameManager : MonoBehaviour
     {
         if (uiTimer >= 6 && midnightIsPassed)
         {
-            night++;
+            canFade = true;
             midnightIsPassed = false;
+            timeActive = false;
+
+            if (canFade)
+            {
+                animator.SetBool("fadeOut", true);
+                canFade = false;
+            }
+            animator.SetBool("fadeOut", true);
+            StartCoroutine(NightTransition());
         }
     }
+
+    IEnumerator NightTransition()
+    {
+        yield return new WaitForSeconds(2f);
+        night++;
+        timer = timeStart;
+        animator.SetBool("fadeOut", false);
+    }
 }
+
