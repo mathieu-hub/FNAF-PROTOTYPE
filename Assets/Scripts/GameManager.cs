@@ -26,7 +26,9 @@ public class GameManager : MonoBehaviour
 
     [Header("TRANSITION")]
     public Animator animator;
-    //public bool canFade = false;
+    public Animator animator2;
+    public Text nightSwitchText;
+    public GameObject nightSwich;
 
 
     private void Awake()
@@ -40,7 +42,9 @@ public class GameManager : MonoBehaviour
         uiTimer = 12;
         timeText.text = uiTimer.ToString();
         night = 1;
-        nightText.text = night.ToString();        
+        nightText.text = night.ToString();
+        nightSwitchText.text = night.ToString();
+        nightSwich.SetActive(false);
     }
 
     void Update()
@@ -52,6 +56,7 @@ public class GameManager : MonoBehaviour
 
         timeText.text = uiTimer.ToString() + "AM"; //Affichage textuel de la valeur uiTimer dans la textBox
         nightText.text = "Night " + night.ToString(); //Affichage textuel de la valeur night dans la textBox
+        nightSwitchText.text = "Night " + night.ToString();
         TimePassing();
         EndNight();
     }
@@ -83,6 +88,7 @@ public class GameManager : MonoBehaviour
         {
             midnightIsPassed = false;
             timeActive = false;
+            nightSwich.SetActive(true);
             animator.SetBool("fadeOut", true);
             StartCoroutine(NightTransition());
         }
@@ -93,10 +99,16 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("fadeOut", false);
         animator.SetBool("blackScreenLoop", true);
+        animator2.SetBool("fadeText", true);
+        yield return new WaitForSeconds(0.1f);
+        animator2.SetBool("fadeText", false);
+        animator2.SetBool("displayText", true);
         yield return new WaitForSeconds(2f);
         night++;
         timer = timeStart;
-        //animator.SetBool("fadeOut", false);
+        yield return new WaitForSeconds(2f);
+        animator2.SetBool("displayText", false);
+        animator.SetBool("blackScreenLoop", false);
     }
 }
 
