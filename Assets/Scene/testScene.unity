@@ -2947,7 +2947,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Hour
+
+'
 --- !u!222 &517380446
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10228,7 +10230,9 @@ MonoBehaviour:
   CameraManager: {fileID: 1969730698}
   timeStart: 0
   timer: 0
+  uiTimer: 0
   textBox: {fileID: 517380445}
+  night: 1
 --- !u!4 &1969730697
 Transform:
   m_ObjectHideFlags: 0

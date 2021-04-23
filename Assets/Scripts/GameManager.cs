@@ -13,7 +13,11 @@ public class GameManager : MonoBehaviour
     [Header("TIME")]
     public float timeStart = 0;
     public float timer;
+    public int uiTimer;
     public Text textBox;
+
+    [Header("NIGHT")]
+    public int night = 1;
 
 
     private void Awake()
@@ -24,13 +28,31 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         timer = timeStart;
-        textBox.text = timer.ToString();
+        uiTimer = 12;
+        textBox.text = uiTimer.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        textBox.text = Mathf.Round(timer).ToString();
+        timer += Time.deltaTime; //Clock System
+        textBox.text = uiTimer.ToString(); //Affichage textuel de la valeur uiTimer dans la textBox
+        TimePassing();
+    }
+
+    void TimePassing()
+    {
+        if(timer == 90)
+        {
+            timer = timeStart;
+            if (uiTimer == 12)
+            {
+                uiTimer = 1;
+            }
+            else
+            {
+                uiTimer += 1;
+            }
+        }
     }
 }
