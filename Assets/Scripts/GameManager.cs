@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     [Header("TRANSITION")]
     public Animator animator;
-    public bool canFade = false;
+    //public bool canFade = false;
 
 
     private void Awake()
@@ -81,15 +81,8 @@ public class GameManager : MonoBehaviour
     {
         if (uiTimer >= 6 && midnightIsPassed)
         {
-            canFade = true;
             midnightIsPassed = false;
             timeActive = false;
-
-            if (canFade)
-            {
-                animator.SetBool("fadeOut", true);
-                canFade = false;
-            }
             animator.SetBool("fadeOut", true);
             StartCoroutine(NightTransition());
         }
@@ -97,10 +90,13 @@ public class GameManager : MonoBehaviour
 
     IEnumerator NightTransition()
     {
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("fadeOut", false);
+        animator.SetBool("blackScreenLoop", true);
         yield return new WaitForSeconds(2f);
         night++;
         timer = timeStart;
-        animator.SetBool("fadeOut", false);
+        //animator.SetBool("fadeOut", false);
     }
 }
 
