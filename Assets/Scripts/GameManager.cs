@@ -14,10 +14,13 @@ public class GameManager : MonoBehaviour
     public float timeStart = 0;
     public float timer;
     public int uiTimer;
-    public Text textBox;
+    public Text timeText;
+    [SerializeField]
+    private bool midnightIsPassed = false;
 
     [Header("NIGHT")]
-    public int night = 1;
+    public int night;
+    public Text nightText;
 
 
     private void Awake()
@@ -29,14 +32,18 @@ public class GameManager : MonoBehaviour
     {
         timer = timeStart;
         uiTimer = 12;
-        textBox.text = uiTimer.ToString();
+        timeText.text = uiTimer.ToString();
+        night = 1;
+        nightText.text = night.ToString();
     }
 
     void Update()
     {
         timer += Time.deltaTime; //Clock System
-        textBox.text = uiTimer.ToString(); //Affichage textuel de la valeur uiTimer dans la textBox
+        timeText.text = uiTimer.ToString() + "AM"; //Affichage textuel de la valeur uiTimer dans la textBox
+        nightText.text = "Night " + night.ToString();
         TimePassing();
+        EndNight();
     }
 
     void TimePassing()
@@ -52,6 +59,20 @@ public class GameManager : MonoBehaviour
             {
                 uiTimer += 1;
             }
+        }
+
+        if(uiTimer == 1)
+        {
+            midnightIsPassed = true;
+        }
+    }
+
+    void EndNight()
+    {
+        if (uiTimer >= 6 && midnightIsPassed)
+        {
+            night++;
+            midnightIsPassed = false;
         }
     }
 }
