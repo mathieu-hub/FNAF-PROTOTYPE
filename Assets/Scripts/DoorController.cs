@@ -39,7 +39,7 @@ public class DoorController : MonoBehaviour
         }
     }
 
-    void OnMouseDown() //LAUNCH WHEN THE MOUSE CLICK ON THE COLLIDER OF THE OBJECT WHICH CONTAIN THE SCRIPT
+    public void OnMouseDown() //LAUNCH WHEN THE MOUSE CLICK ON THE COLLIDER OF THE OBJECT WHICH CONTAIN THE SCRIPT
     {
         if(doorIsOpen == false)
         {

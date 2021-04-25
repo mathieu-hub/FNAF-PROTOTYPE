@@ -12783,6 +12783,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraManager: {fileID: 1969730698}
   PowerManager: {fileID: 1969730699}
+  doorControllerLeft: {fileID: 388418182}
+  doorControllerRight: {fileID: 1680635016}
+  tabletteController: {fileID: 273426872}
   timeStart: 0
   timer: 0
   uiTimer: 12
@@ -12795,7 +12798,6 @@ MonoBehaviour:
   animator2: {fileID: 606243658}
   nightSwitchText: {fileID: 606243656}
   nightSwich: {fileID: 606243654}
-  tabletteController: {fileID: 273426872}
 --- !u!4 &1969730697
 Transform:
   m_ObjectHideFlags: 0

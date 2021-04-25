@@ -7,11 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("CAMERA MANAGER")]
+    [Header("RÉFÉRENCES")]
     public CamManager CameraManager;
-
-    [Header("POWER MANAGER")]
     public PowerManager PowerManager;
+    public DoorController doorControllerLeft;
+    public DoorController doorControllerRight;
+    public TabletteController tabletteController;
 
     [Header("TIME")]
     public float timeStart = 0;
@@ -33,8 +34,7 @@ public class GameManager : MonoBehaviour
     public Text nightSwitchText;
     public GameObject nightSwich;
 
-    [Header("TABLETTE")]
-    public TabletteController tabletteController;
+    
 
 
     private void Awake()
@@ -117,6 +117,16 @@ public class GameManager : MonoBehaviour
         if (tabletteController.openTablette == true)
         {
             tabletteController.OpenCloseTablette();
+        }
+
+        if (doorControllerLeft.doorIsOpen == true)
+        {
+            doorControllerLeft.OnMouseDown();
+        }
+
+        if (doorControllerRight.doorIsOpen == true)
+        {
+            doorControllerRight.OnMouseDown();
         }
 
         yield return new WaitForSeconds(2f);
