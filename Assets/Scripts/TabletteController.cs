@@ -31,6 +31,7 @@ public class TabletteController : MonoBehaviour
         if (openTablette == false) 
         {
             anim.SetBool("OpenTablette", true);
+            PowerManager.Instance.poweredObjects += 1;
             StartCoroutine(TimeToDisplay());            
         }
         else if (openTablette == true)
@@ -38,6 +39,7 @@ public class TabletteController : MonoBehaviour
             anim.SetBool("OpenTablette", false);
             mapDisplay.SetActive(false);
             camButtons.SetActive(false);
+            PowerManager.Instance.poweredObjects -= 1;
         }
     }
 
