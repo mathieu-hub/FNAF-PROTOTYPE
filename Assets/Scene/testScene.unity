@@ -12163,6 +12163,7 @@ MonoBehaviour:
   animator2: {fileID: 606243658}
   nightSwitchText: {fileID: 606243656}
   nightSwich: {fileID: 606243654}
+  tabletteController: {fileID: 273426872}
 --- !u!4 &1969730697
 Transform:
   m_ObjectHideFlags: 0

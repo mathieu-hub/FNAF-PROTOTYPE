@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     public Text nightSwitchText;
     public GameObject nightSwich;
 
+    [Header("TABLETTE")]
+    public TabletteController tabletteController;
+
 
     private void Awake()
     {
@@ -106,7 +109,15 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         night++;
         timer = timeStart;
+        uiTimer = 12;
+
+        if (tabletteController.openTablette == true)
+        {
+            tabletteController.OpenCloseTablette();
+        }
+
         yield return new WaitForSeconds(2f);
+        timeActive = true;
         animator2.SetBool("displayText", false);
         animator.SetBool("blackScreenLoop", false);
     }

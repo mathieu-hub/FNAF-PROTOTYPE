@@ -11,8 +11,7 @@ public class TabletteController : MonoBehaviour
     public Material camDisplay;
     Renderer rend;
 
-    [SerializeField]
-    private bool openTablette;
+    public bool openTablette;
 
     private void Start()
     {
