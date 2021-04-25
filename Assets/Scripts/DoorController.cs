@@ -44,10 +44,12 @@ public class DoorController : MonoBehaviour
         if(doorIsOpen == false)
         {
             doorIsOpening = true; //Opening the door link to the button when we click on it
+            PowerManager.Instance.poweredObjects += 1;
         }
         else if (doorIsOpen == true)
         {
             doorIsClosing = true; //Closing the door link to the button when we click on it
+            PowerManager.Instance.poweredObjects -= 1;
         }
     }
 }
