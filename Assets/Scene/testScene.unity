@@ -12869,6 +12869,7 @@ MonoBehaviour:
   - {fileID: 136271982}
   - {fileID: 615229766}
   - {fileID: 1179055440}
+  powerLeftText: {fileID: 278607523}
 --- !u!1 &1982658926
 GameObject:
   m_ObjectHideFlags: 0

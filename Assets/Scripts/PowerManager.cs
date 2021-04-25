@@ -13,6 +13,7 @@ public class PowerManager : MonoBehaviour
 
     [Header("POWER COUNTER")]
     public List<GameObject> usageCount;
+    public Text powerLeftText;
     
 
     private void Awake()
@@ -24,6 +25,7 @@ public class PowerManager : MonoBehaviour
     {
         powerLeft = 100f;
         poweredObjects = 1;
+        powerLeftText.text = "Power Left : " + Mathf.Round(powerLeft).ToString() + "%";
     }
 
     private void OnGUI()
@@ -34,6 +36,7 @@ public class PowerManager : MonoBehaviour
     void Update()
     {
         powerLeft -= powerSink * Time.deltaTime;
+        powerLeftText.text = "Power Left : " + Mathf.Round(powerLeft).ToString() + "%";
         UsePower();
     }
 
