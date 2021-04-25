@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         {
             midnightIsPassed = false;
             timeActive = false;
+            PowerManager.powerCanSink = false;
             nightSwich.SetActive(true);
             animator.SetBool("fadeOut", true);
             StartCoroutine(NightTransition());
@@ -113,6 +114,7 @@ public class GameManager : MonoBehaviour
         night++;
         timer = timeStart;
         uiTimer = 12;
+        PowerManager.powerLeft = 100f;
 
         if (tabletteController.openTablette == true)
         {
@@ -131,6 +133,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         timeActive = true;
+        PowerManager.powerCanSink = true;
         animator2.SetBool("displayText", false);
         animator.SetBool("blackScreenLoop", false);
     }

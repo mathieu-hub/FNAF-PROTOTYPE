@@ -9,6 +9,7 @@ public class PowerManager : MonoBehaviour
     
     public float powerLeft;
     public float powerSink = 0.1f;
+    public bool powerCanSink = true;
     public int poweredObjects;
 
     [Header("POWER COUNTER")]
@@ -35,7 +36,11 @@ public class PowerManager : MonoBehaviour
 
     void Update()
     {
-        powerLeft -= powerSink * Time.deltaTime;
+        if (powerCanSink)
+        {
+            powerLeft -= powerSink * Time.deltaTime;
+        }
+        
         powerLeftText.text = "Power Left : " + Mathf.Round(powerLeft).ToString() + "%";
         UsePower();
     }
