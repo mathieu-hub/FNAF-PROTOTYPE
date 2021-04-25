@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     [Header("CAMERA MANAGER")]
     public CamManager CameraManager;
 
+    [Header("POWER MANAGER")]
+    public PowerManager PowerManager;
+
     [Header("TIME")]
     public float timeStart = 0;
     public float timer;
@@ -85,7 +88,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void EndNight()
+    void EndNight() //Player Survives The Night 
     {
         if (uiTimer >= 6 && midnightIsPassed)
         {
