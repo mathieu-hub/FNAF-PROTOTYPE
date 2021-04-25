@@ -6,6 +6,7 @@ public class TabletteController : MonoBehaviour
 {
     public Animator anim;
     public GameObject mapDisplay;
+    public GameObject camButtons;
     
     public Material camDisplay;
     Renderer rend;
@@ -37,6 +38,7 @@ public class TabletteController : MonoBehaviour
         {
             anim.SetBool("OpenTablette", false);
             mapDisplay.SetActive(false);
+            camButtons.SetActive(false);
         }
     }
 
@@ -44,5 +46,6 @@ public class TabletteController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         mapDisplay.SetActive(true);
+        camButtons.SetActive(true);
     }
 }
