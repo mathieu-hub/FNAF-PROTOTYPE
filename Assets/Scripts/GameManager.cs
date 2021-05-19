@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     public Animator animator2;
     public Text nightSwitchText;
     public GameObject nightSwich;
-
     
 
 
