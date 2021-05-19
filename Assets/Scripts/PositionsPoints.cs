@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class PositionsPoints : MonoBehaviour
 {
-    public List<Transform>[] points;
-
-    private void Awake()
+    [SerializeField]
+    private List<GameObject> positions = new List<GameObject>();
+    void Start()
     {
-        points = new List<Transform>[transform.childCount];
+        Transform[] allchildren = GetComponentsInChildren<Transform>();
+
+        List<GameObject> childObjects = new List<GameObject>();
+
+        foreach (Transform child in allchildren)
+        {
+            childObjects.Add(child.gameObject);
+        }
+
+        positions = childObjects;
+
+        Debug.Log(gameObject.name + childObjects.Count);
+        Debug.Log(gameObject.name + childObjects[0]);
     }
 }
