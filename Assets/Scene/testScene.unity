@@ -2216,6 +2216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 353711956}
+  - component: {fileID: 353711957}
   m_Layer: 0
   m_Name: Positions Freddy
   m_TagString: Untagged
@@ -2252,6 +2253,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &353711957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353711955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abebe78ee877dc408ef6aff210627ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
 --- !u!1 &379667510
 GameObject:
   m_ObjectHideFlags: 0
@@ -7262,6 +7276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1116570241}
+  - component: {fileID: 1116570242}
   m_Layer: 0
   m_Name: Positions Bonnie
   m_TagString: Untagged
@@ -7291,6 +7306,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1116570242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116570240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abebe78ee877dc408ef6aff210627ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
 --- !u!1 &1136747420
 GameObject:
   m_ObjectHideFlags: 0
@@ -11179,6 +11207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1657410954}
+  - component: {fileID: 1657410955}
   m_Layer: 0
   m_Name: Positions Chica
   m_TagString: Untagged
@@ -11215,6 +11244,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1657410955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657410953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abebe78ee877dc408ef6aff210627ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
 --- !u!1 &1679699539
 GameObject:
   m_ObjectHideFlags: 0
@@ -13172,6 +13214,7 @@ GameObject:
   - component: {fileID: 1969730696}
   - component: {fileID: 1969730698}
   - component: {fileID: 1969730699}
+  - component: {fileID: 1969730700}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13283,6 +13326,36 @@ MonoBehaviour:
   - {fileID: 615229766}
   - {fileID: 1179055440}
   powerLeftText: {fileID: 278607523}
+--- !u!114 &1969730700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969730695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c49c77e8bdd5734b9374d9377e694ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freddy: {fileID: 7012927400235764229}
+  fPositions: {fileID: 353711955}
+  freddyPositionlist: []
+  freddyActualPosition: {fileID: 0}
+  freddyTargetPosition: {fileID: 0}
+  freddyMoveSpeed: 0
+  chicca: {fileID: 919132148536896918}
+  cPositions: {fileID: 1657410953}
+  chiccaPositionlist: []
+  chiccaActualPosition: {fileID: 0}
+  chiccaTargetPosition: {fileID: 0}
+  chiccaMoveSpeed: 0
+  bonnie: {fileID: 919132149209921362}
+  bPositions: {fileID: 1116570240}
+  bonniePositionlist: []
+  bonnieActualPosition: {fileID: 0}
+  bonnieTargetPosition: {fileID: 0}
+  bonnieMoveSpeed: 0
 --- !u!1 &1982658926
 GameObject:
   m_ObjectHideFlags: 0
