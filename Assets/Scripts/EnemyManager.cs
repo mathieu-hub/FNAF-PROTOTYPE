@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance;
+    public DoorController leftDoor;
+    public DoorController rightDoor;
 
     [Header("FREDDY")]
     public GameObject freddy;
@@ -85,22 +87,113 @@ public class EnemyManager : MonoBehaviour
     {
         bonnie.transform.position = bonniePositionlist[bonnieIndexMove].transform.position;
 
+        if (bonnieIndexMove == 1) //Si Bonnie est au Start.
+        {
+            bonnieIndexMove = 2;
+        }
+
+        //Variable permettant de définir sur une plage random, le moment du prochain déplacement.
         bonnieLastMove += Time.deltaTime;
 
         int moveTime = Random.Range(10, 25);
         Debug.Log("Bonnie MoveTime " + moveTime);
 
-        if (bonnieLastMove == moveTime)
+        //Patterns de déplacements de Bonnie.
+        if (bonnieLastMove >= moveTime)
         {
             bonnieLastMove = 0;
 
-            if (bonnieIndexMove == 2)
-            {
-                int randomChoice = Random.Range(1, 5);
+            int randomChoice = Random.Range(1, 6);
+            Debug.Log(randomChoice);
 
+            if (bonnieIndexMove == 2) //Si Bonnie est dans la Salle Principale.
+            {               
                 if (randomChoice <= 3)
                 {
-                    // HERE !!!!
+                    bonnieIndexMove = 4;
+                }
+                else if (randomChoice > 3)
+                {
+                    bonnieIndexMove = 3;
+                }
+            }
+            else if (bonnieIndexMove == 3) //Si Bonnie est dans l'Annexe.
+            {
+                bonnieIndexMove = 2;
+            }
+            else if (bonnieIndexMove == 4) //Si Bonnie est dans le Couloir 01.
+            {
+                if (randomChoice == 1)
+                {
+                    bonnieIndexMove = 2;
+                }
+                else if (1 < randomChoice && randomChoice < 4)
+                {
+                    bonnieIndexMove = 5;
+                }
+                else if (randomChoice > 3)
+                {
+                    bonnieIndexMove = 6;
+                }
+            }
+            else if (bonnieIndexMove == 5) //Si Bonnie est dans la Remise.
+            {
+                bonnieIndexMove = 4;
+            }
+            else if (bonnieIndexMove == 6) //Si Bonnie est dans le Couloir 02.
+            {
+                if (randomChoice == 1)
+                {
+                    bonnieIndexMove = 4;
+                }
+                else if (1 < randomChoice && randomChoice < 4)
+                {
+                    bonnieIndexMove = 7;
+                }
+                else if (randomChoice > 3)
+                {
+                    bonnieIndexMove = 8;
+                }
+            }
+            else if (bonnieIndexMove == 8) //Si Bonnie est dans le Couloir 03.
+            {
+                if (randomChoice <= 4)
+                {
+                    bonnieIndexMove = 7;
+                }
+                else if (randomChoice == 5)
+                {
+                    bonnieIndexMove = 6;
+                }
+            }
+            else if (bonnieIndexMove == 7) //Si Bonnie est à DANGER LEFT.
+            {
+                if (leftDoor.doorIsOpen == false) //erreur ici
+                {
+                    if (randomChoice == 1)
+                    {
+                        bonnieIndexMove = 8;
+                    }
+                    else if (randomChoice == 2)
+                    {
+                        bonnieIndexMove = 6;
+                    }
+                    else if (randomChoice == 3)
+                    {
+                        bonnieIndexMove = 5;
+                    }
+                    else if (randomChoice == 4)
+                    {
+                        bonnieIndexMove = 4;
+                    }
+                    else if (randomChoice == 5)
+                    {
+                        bonnieIndexMove = 2;
+                    }
+                }
+                else if (leftDoor.doorIsOpen)
+                {
+                    bonnieIndexMove = 9;
                 }
             }
         }

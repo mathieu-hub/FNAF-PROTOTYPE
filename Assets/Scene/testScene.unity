@@ -6161,7 +6161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936149481}
   m_Layer: 0
-  m_Name: Room 04
+  m_Name: Couloir 03
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13401,24 +13401,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c49c77e8bdd5734b9374d9377e694ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftDoor: {fileID: 388418182}
+  rightDoor: {fileID: 1680635016}
   freddy: {fileID: 7012927400235764229}
   freddyActualPosition: {fileID: 0}
   freddyTargetPosition: {fileID: 0}
   fPositions: {fileID: 353711955}
-  freddyPositionlist: []
+  freddyCanMove: 0
+  freddyLastMove: 0
+  freddyIndexMove: 0
   freddyMoveSpeed: 5
+  freddyPositionlist: []
   chicca: {fileID: 919132148536896918}
   chiccaActualPosition: {fileID: 0}
   chiccaTargetPosition: {fileID: 0}
   cPositions: {fileID: 1657410953}
-  chiccaPositionlist: []
+  chiccaCanMove: 0
+  chiccaLastMove: 0
+  chiccaIndexMove: 0
   chiccaMoveSpeed: 5
+  chiccaPositionlist: []
   bonnie: {fileID: 919132149209921362}
   bonnieActualPosition: {fileID: 0}
   bonnieTargetPosition: {fileID: 0}
   bPositions: {fileID: 1116570240}
-  bonniePositionlist: []
+  bonnieCanMove: 0
+  bonnieLastMove: 0
+  bonnieIndexMove: 0
   bonnieMoveSpeed: 5
+  bonniePositionlist: []
 --- !u!1 &1982658926
 GameObject:
   m_ObjectHideFlags: 0

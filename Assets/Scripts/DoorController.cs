@@ -6,7 +6,7 @@ public class DoorController : MonoBehaviour
     public GameObject door;
     public bool doorIsOpening;
     public bool doorIsClosing;
-    public bool doorIsOpen;
+    public bool doorIsOpen = true;
 
     [Range(5f,10f)]
     public float speedOpening;
