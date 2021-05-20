@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PositionsPoints : MonoBehaviour
 {
-    [SerializeField]
-    private List<GameObject> positions = new List<GameObject>();
+    public List<GameObject> childPositions = new List<GameObject>();
+
     void Start()
     {
         Transform[] allchildren = GetComponentsInChildren<Transform>();
@@ -17,9 +17,6 @@ public class PositionsPoints : MonoBehaviour
             childObjects.Add(child.gameObject);
         }
 
-        positions = childObjects;
-
-        Debug.Log(gameObject.name + childObjects.Count);
-        Debug.Log(gameObject.name + childObjects[0]);
+        childPositions = childObjects;
     }
 }
