@@ -50,6 +50,10 @@ public class EnemyManager : MonoBehaviour
     private int bMinInclusive = 10;
     private int bMaxExclusive = 25;
 
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -60,8 +64,12 @@ public class EnemyManager : MonoBehaviour
         Initialisation();
     }
 
-    void Initialisation()
+    public void Initialisation()
     {
+        freddyCanMove = false;
+        bonnieCanMove = false;
+        chiccaCanMove = false;
+
         freddyIndexMove = 1;
         chiccaIndexMove = 1;
         bonnieIndexMove = 1;

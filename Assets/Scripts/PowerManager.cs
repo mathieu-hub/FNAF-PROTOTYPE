@@ -43,6 +43,11 @@ public class PowerManager : MonoBehaviour
         
         powerLeftText.text = "Power Left : " + Mathf.Round(powerLeft).ToString() + "%";
         UsePower();
+
+        if (powerLeft <= 0f)
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 
     public void UsePower()

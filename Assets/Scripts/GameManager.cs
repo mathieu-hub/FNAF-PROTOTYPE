@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Update()
-    {
+    {       
         if (timeActive)
         {
             timer += Time.deltaTime; //Clock System
@@ -68,6 +68,96 @@ public class GameManager : MonoBehaviour
         nightSwitchText.text = "Night " + night.ToString();
         TimePassing();
         EndNight();
+
+        ActivateEnemmies();
+    }
+
+    void ActivateEnemmies()
+    {
+        if (night == 1)
+        {
+            if (uiTimer == 12 && timer >= 40)
+            {
+                EnemyManager.Instance.bonnieCanMove = true;
+            }
+
+            if (uiTimer == 1 && timer >= 25)
+            {
+                EnemyManager.Instance.chiccaCanMove = true;
+            }
+        }
+
+        if (night == 2)
+        {
+            if (uiTimer == 12 && timer >= 10)
+            {
+                EnemyManager.Instance.bonnieCanMove = true;
+            }
+
+            if (uiTimer == 1)
+            {
+                EnemyManager.Instance.chiccaCanMove = true;
+            }
+
+            if (uiTimer == 4 && timer >= 50)
+            {
+                EnemyManager.Instance.freddyCanMove = true;
+            }
+        }
+
+        if (night == 3)
+        {
+            if (uiTimer == 12 && timer >= 5)
+            {
+                EnemyManager.Instance.bonnieCanMove = true;
+            }
+
+            if (uiTimer == 1)
+            {
+                EnemyManager.Instance.chiccaCanMove = true;
+            }
+
+            if (uiTimer == 3)
+            {
+                EnemyManager.Instance.freddyCanMove = true;
+            }
+        }
+
+        if (night == 4)
+        {
+            if (uiTimer == 12 && timer >= 5)
+            {
+                EnemyManager.Instance.bonnieCanMove = true;
+            }
+
+            if (uiTimer == 12 && timer >= 30)
+            {
+                EnemyManager.Instance.chiccaCanMove = true;
+            }
+
+            if (uiTimer == 2)
+            {
+                EnemyManager.Instance.freddyCanMove = true;
+            }
+        }
+
+        if (night == 5)
+        {
+            if (uiTimer == 12 && timer >= 5)
+            {
+                EnemyManager.Instance.bonnieCanMove = true;
+            }
+
+            if (uiTimer == 12 && timer >= 30)
+            {
+                EnemyManager.Instance.chiccaCanMove = true;
+            }
+
+            if (uiTimer == 1)
+            {
+                EnemyManager.Instance.freddyCanMove = true;
+            }
+        }
     }
 
     void TimePassing()
@@ -100,6 +190,7 @@ public class GameManager : MonoBehaviour
             PowerManager.powerCanSink = false;
             nightSwich.SetActive(true);
             animator.SetBool("fadeOut", true);
+            EnemyManager.Instance.Initialisation();
             StartCoroutine(NightTransition());
         }
     }
@@ -117,6 +208,7 @@ public class GameManager : MonoBehaviour
         night++;
         timer = timeStart;
         uiTimer = 12;
+        EnemyManager.Instance.Initialisation();
         PowerManager.powerLeft = 100f;
 
         if (tabletteController.openTablette == true)
