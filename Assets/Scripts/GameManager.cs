@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,7 +35,9 @@ public class GameManager : MonoBehaviour
     public Text nightSwitchText;
     public GameObject nightSwich;
 
-    
+    [Header("GAME OVER")]
+    public GameObject background;
+    public GameObject buttonRestart;    
 
 
     private void Awake()
@@ -136,6 +139,18 @@ public class GameManager : MonoBehaviour
         PowerManager.powerCanSink = true;
         animator2.SetBool("displayText", false);
         animator.SetBool("blackScreenLoop", false);
+    }
+
+    public void GameOver()
+    {
+        background.SetActive(true);
+        buttonRestart.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
 
